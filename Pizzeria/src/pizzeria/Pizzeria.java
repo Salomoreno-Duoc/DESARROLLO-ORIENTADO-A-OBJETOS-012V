@@ -21,7 +21,8 @@ public class Pizzeria {
         System.out.println("Mi pizza es de tamaño "+tamano);
         
         pizza1.setTamano("Grande");
-        System.out.println("Mi pizza es de tamaño "+tamano);
+        String tamanoFinal = pizza1.getTamano();
+        System.out.println("Mi pizza es de tamaño "+tamanoFinal);
     }
     
 }
