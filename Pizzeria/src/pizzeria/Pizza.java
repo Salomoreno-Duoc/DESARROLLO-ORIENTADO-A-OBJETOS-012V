@@ -32,6 +32,18 @@ public class Pizza {
     public String getNombre() {
         return nombre;
     }
+
+    public void setTamano(String tamano) {
+        this.tamano = tamano;
+    }
+
+    public void setMasa(String masa) {
+        this.masa = masa;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
     
     
 }
