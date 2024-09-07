@@ -11,16 +11,26 @@ además de las notas parciales (nota1, nota2 y nota3).
  * @author CETECOM
  */
 public class Asignatura {
-    private Docente docente;
-    private String nombreAsignatura,codigoAsignatura,nombreEstudiante;
-    private float nota1,nota2,nota3;
+    private Alumno alumno;
+    private String docente,nombreAsignatura,codigoAsignatura,nombreEstudiante;
+    private float nota1,nota2,nota3,presentacionExamen,notaExamen;
 
+    public Asignatura(String docente, Alumno alumno, String codigoAsignatura,String nombreAsignatura,float nota1, float nota2, float nota3) {
+        /* Aca deben estar las validaciones*/
+        this.docente = docente;
+        this.nombreAsignatura = nombreAsignatura;
+        this.codigoAsignatura = codigoAsignatura;
+        this.alumno = alumno;
+        this.nota1 = nota1;
+        this.nota2 = nota2;
+        this.nota3 = nota3;
+    }
     
-    public Docente getDocente() {
+    public String getDocente() {
         return docente;
     }
 
-    public void setDocente(Docente docente) {
+    public void setDocente(String docente) {
         this.docente = docente;
     }
 
@@ -60,6 +70,10 @@ public class Asignatura {
         return nota2;
     }
 
+    public float getPresentacionExamen() {
+        return presentacionExamen;
+    }
+
     public void setNota2(float nota2) {
         this.nota2 = nota2;
     }
@@ -72,4 +86,38 @@ public class Asignatura {
         this.nota3 = nota3;
     }
     
+    public void calcularNota(){
+        presentacionExamen = (float) ((nota1*0.3)+(nota2*0.3)+(nota3*0.4));
+    
+    }
+
+    public void setNotaExamen(float notaExamen) {
+        this.notaExamen = notaExamen;
+    }
+    
+    
+    public void getEximicion(){
+        if (presentacionExamen >= 5){
+            System.out.println("eximido");
+            notaExamen = presentacionExamen;
+        }
+        else{
+            System.out.println("no eximido");
+        }
+    }
+
+    public void getResultado(float notaExamen, float presentacionExamen) {
+        if ((notaExamen*0.6)+(presentacionExamen)>= 4.0){
+            System.out.println("aprobado");
+        }
+        else{
+            System.out.println("reprobado");
+        }
+    } 
+                    
+        
+    
+    /*
+    * 
+    */
 }
